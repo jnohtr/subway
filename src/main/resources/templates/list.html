@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>SpringBoot Lesson 10</title>
+</head>
+<body>
+    <a href="/add">Add a Food</a> <br/>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qauntity</th>
+            <td>Actions</td>
+        </tr>
+        <tr th:each="food : ${foods}">
+            <td th:text="${food.name}"></td>
+            <td th:text="${food.price}"></td>
+            <td th:text="${food.quantity}"></td>
+            <td>
+                <a th:href="@{/update/{id}(id=${food.id})}">Update</a>
+                <a th:href="@{/detail/{id}(id=${food.id})}">Details</a>
+                <a th:href="@{/delete/{id}(id=${food.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sandwich Menu</title>
+</head>
+<body>
+    <a href="/">Show All Foods</a> <br/>
+
+
+    Name: <span th:text="${food.name}"></span> <br/>
+    Price: <span th:text="${food.price}"></span> <br/>
+    Description: <p th:text="${food.description}"></p> <br/>
+    Quantity: <span th:text="${food.quantity}"></span> <br/>
+
+
+    <a th:href="@{/delete/{id}(id=${food.id})}">Delete this food</a>
+</body>
+</html>
